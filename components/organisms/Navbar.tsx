@@ -22,8 +22,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50  mt-19.5 max-lg:mt-11.75 font-sans">
-      <div className=" mx-[85px] max-lg:mx-10.25 flex items-center justify-between px-[2.38rem] max-lg:px-[27px] py-[17px] bg-[#FFFFFF] rounded-3xl max-lg:rounded-[15px]">
+    <nav className="fixed top-0 left-0 w-full z-50  mt-19.5 max-lg:mt-11.75  font-sans">
+      <div className=" mx-[85px] max-lg:mx-10.25  flex items-center justify-between px-[2.38rem]  max-lg:px-6.75 py-[17px] bg-[#FFFFFF] rounded-3xl max-lg:rounded-[15px] ">
         <a href="/" className="">
           <Image
             src={logo}
@@ -33,7 +33,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <div className="max-lg:hidden flex space-x-15 items-center">
+        <div className="  max-lg:hidden flex space-x-15 items-center">
           {navItems.map((item) => (
             // <Link
             //   key={item.to}
@@ -66,7 +66,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="max-lg:block hidden text-gray-700"
+          className=" max-lg:block hidden text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
@@ -75,7 +75,7 @@ export default function Navbar() {
             <Menu size={18} color="#18BCCA" className="w-5.75" />
           )}
         </button>
-        <Button className="bg-[#1ABAC9] rounded-[0.625rem] px-[1.2188rem] py-[0.4688rem] text-[#FFFFFF] font-semibold text-[13px] block max-lg:hidden">
+        <Button className="bg-[#1ABAC9] rounded-[0.625rem] px-[1.2188rem] py-[0.4688rem] text-[#FFFFFF] font-semibold text-[13px] block  max-lg:hidden ">
           Download App
         </Button>
       </div>
