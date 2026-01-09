@@ -28,14 +28,20 @@ export default function Customer() {
         start: "top top",
         end: () => `+=${totalWidth}`, // scroll distance = content width
         scrub: 1,
-        pin: true, // pins the section while scrolling
+        pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
       },
     });
 
+    // tl.to(container, {
+    //   x: () => +(totalWidth - window.innerWidth), // move left by overflow amount
+    //   ease: "none",
+    // });
+    const scrollAmount = Math.max(0, totalWidth - window.innerWidth);
+
     tl.to(container, {
-      x: () => +(totalWidth - window.innerWidth), // move left by overflow amount
+      x: -scrollAmount, // 👈 NEGATIVE = move left
       ease: "none",
     });
 
@@ -84,11 +90,11 @@ export default function Customer() {
               </div>
             </div>
             <div className="w-full flex flex-col gap-[63px]">
-              <h2 className="text-[48px] font-medium text-[#101010] text-start">
+              <h2 className="text-[48px] max-lg:text-[32px] font-medium text-[#101010] text-start">
                 Why You’ll Love Using Our App
               </h2>
 
-              <div className="">
+              <div className=" overflow-x-auto scrollbar-hide">
                 <div
                   ref={containerRef}
                   className="flex gap-[92px] pb-8"
