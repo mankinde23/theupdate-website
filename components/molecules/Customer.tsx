@@ -90,7 +90,7 @@ export default function Customer() {
               </div>
             </div>
             <div className="w-full flex flex-col gap-[63px]">
-              <h2 className="text-[48px] max-lg:text-[32px] font-medium text-[#101010] text-start">
+              <h2 className="text-[48px] max-lg:text-[32px] max-md:text-[20px] font-medium text-[#101010] text-start">
                 Why You’ll Love Using Our App
               </h2>
 

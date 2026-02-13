@@ -13,6 +13,51 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
+import { motion } from "framer-motion";
+const imageRevealVariants = {
+  hidden: {
+    opacity: 0,
+    y: 80, // start lower
+    scale: 0.96, // tiny bit smaller (premium touch)
+    filter: "blur(4px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1.2,
+      ease: [0.25, 0.1, 0.25, 1] as const,
+      // or use: ease: "easeOut"
+    },
+  },
+};
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.22, // time between each card (~140ms) - feels natural
+      delayChildren: 0.6, // small delay before the first card starts
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.94, // very subtle shrink → normal size
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1.0,
+      ease: [0.25, 0.1, 0.25, 1] as const, // smooth modern easing
+    },
+  },
+};
 export default function Hero() {
   // const tabs = [
   //   {
@@ -54,8 +99,8 @@ export default function Hero() {
   //   { value: "announcement", label: "ANNOUNCEMENT" },
   // ];
   // const [active, setActive] = React.useState("update");
-  const [activeTab, setActiveTab] = useState(null);
-  const [hoveredTab, setHoveredTab] = useState(null);
+const [activeTab, setActiveTab] = useState<string | null>(null);
+const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
   const tabs = [
     {
@@ -96,25 +141,112 @@ export default function Hero() {
         bg-cover
         bg-center
         bg-no-repeat
-        min-h-screen
+   
         rounded-[36px]
+        bg-[position:50%_20%]
         max-lg:rounded-[27px]
+        max-lg:bg-cover
+        max-lg:bg-center
+        
         w-full
+     
+     
       "
     >
       <div className=" mb-[7.5625rem] ">
-        <div className=" max-lg:w-full max-lg:px-[1.4375rem] flex flex-col gap-[4.125rem] max-lg:gap-0 justify-end">
-          <div className="ml-[111px] mr-[52px]">
-            <Image
+        <div className=" max-lg:w-full max-lg:px-[0rem] flex flex-col gap-[4.125rem] max-lg:gap-0 justify-end">
+          <div className="ml-[111px] mr-[52px] max-lg:ml-0 max-lg:mr-0 max-lg:px-[1.4375rem]">
+            {/* <Image
               src={update}
               alt="nation wide logo"
               className=" mt-[289px]"
-            />
+            /> */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={imageRevealVariants}
+              // Optional: delay if you want it to appear after background or other elements
+              // transition={{ delay: 0.4 }}
+            >
+              <Image
+                src={update}
+                alt="The Update logo"
+                className="mt-[289px] w-auto h-auto" // keep natural size
+                priority // ← important for hero!
+              />
+            </motion.div>
           </div>
 
-          <div className="overflow-x-auto pb-2 mx-[65px] min-h-[280px] flex items-end">
-            <ScrollArea className="w-full">
-              <div className="flex items-end justify-center gap-4 relative min-h-[280px]">
+          <div className="overflow-x-auto  pb-2 mx-[65px] max-lg:mx-0 min-h-[280px] flex items-end max-lg:pl-[1.4375rem]">
+            <ScrollArea className="w-full ">
+              <motion.div
+                className="flex items-end justify-center gap-4 relative min-h-[280px]"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible" // starts automatically when component mounts
+                // Alternative (scroll triggered):
+                // whileInView="visible"
+                // viewport={{ once: true, amount: 0.25 }}
+              >
+                {tabs.map((tab) => {
+                  const expanded = isExpanded(tab.id);
+
+                  return (
+                    <motion.div
+                      key={tab.id}
+                      variants={cardVariants} // ← each card gets staggered animation
+                      className="relative"
+                      style={{ width: "256px", height: "47px" }}
+                    >
+                      <div
+                        className={`
+                      absolute bottom-0 left-0 right-0
+                      bg-white rounded-[10px] shadow-lg cursor-pointer
+                      transition-all duration-500 ease-out origin-bottom
+                      ${
+                        expanded
+                          ? "h-[213px] pt-[25px] rounded-[14px]"
+                          : "h-[50px]"
+                      }
+                    `}
+                        onMouseEnter={() => setHoveredTab(tab.id)}
+                        onMouseLeave={() => setHoveredTab(null)}
+                        onClick={() =>
+                          setActiveTab(activeTab === tab.id ? null : tab.id)
+                        }
+                      >
+                        <div className="h-full flex flex-col pt-[16.5px] px-[25px] w-[256px]">
+                          <div className="flex items-center justify-between flex-shrink-0">
+                            <h3 className="font-semibold text-[13px] text-[#1E1E1E]">
+                              {tab.label}
+                            </h3>
+                            <div className="border-[0.5px] border-[#18BCCA] rounded-full w-[18px] h-[18px] flex justify-center items-center">
+                              <div className="rounded-full bg-[#18BCCA] w-[7.5px] h-[7.5px]" />
+                            </div>
+                          </div>
+
+                          <div
+                            className={`
+                          overflow-hidden transition-all duration-500 ease-out mt-4
+                          ${
+                            expanded
+                              ? "opacity-100 flex-1"
+                              : "opacity-0 h-0 mt-0"
+                          }
+                        `}
+                          >
+                            <p className="text-[#1E1E1E] leading-[200%] text-[12px] font-garet font-light">
+                              {tab.content}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+
+              {/* <div className="flex items-end justify-center gap-4 relative min-h-[280px]">
                 {tabs.map((tab) => {
                   const expanded = isExpanded(tab.id);
 
@@ -170,15 +302,15 @@ export default function Hero() {
                     </div>
                   );
                 })}
-              </div>
-              <ScrollBar orientation="horizontal" />
+              </div> */}
+              <ScrollBar orientation="horizontal" className="hidden" />
             </ScrollArea>
           </div>
-          <div className="flex justify-end mr-[42px] mb-[39px]">
+          <div className="flex justify-end max-md:justify-start mr-[42px] max-lg:mr-0 mb-[39px] max-lg:px-[1.4375rem]">
             <Image
               src={flower}
               alt="nation wide logo"
-              className="max-lg:w-[15px] max-lg:h-[20px] "
+              className="max-lg:w-[24px] max-lg:h-[24px] "
             />
           </div>
         </div>
