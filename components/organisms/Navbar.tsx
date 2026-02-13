@@ -35,7 +35,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="  max-lg:hidden flex space-x-15 items-center">
+        <div className="  max-lg:hidden flex gap-[21px] items-center">
           {navItems.map((item) => (
             // <Link
             //   key={item.to}
@@ -58,7 +58,7 @@ export default function Navbar() {
               duration={500}
               spy={true}
               activeClass="text-[#18BCCA] text-[14px] font-semibold font-poppins after:bg-yellow-500 bg-[#E7F7F8] rounded-[7px] py-[3.5px] px-[14px] text-center flex justify-center items-center h-fit"
-              className="cursor-pointer text-[#1E1E1E] font-poppins hover:text-white transition relative text-[14px] font-medium flex justify-center items-center h-fit
+              className="cursor-pointer text-[#1E1E1E] font-poppins hover:text-white transition relative text-[14px] font-medium flex justify-center items-center h-fit px-[14px]
              after:content-[''] after:block  after:text-[#18BCCA] after:text-[14px] after:rounded-[7px]  after:mx-auto after:bg-transparent"
             >
               {item.name}
