@@ -99,8 +99,8 @@ export default function Hero() {
   //   { value: "announcement", label: "ANNOUNCEMENT" },
   // ];
   // const [active, setActive] = React.useState("update");
-const [activeTab, setActiveTab] = useState<string | null>(null);
-const [hoveredTab, setHoveredTab] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
   const tabs = [
     {
@@ -141,7 +141,6 @@ const [hoveredTab, setHoveredTab] = useState<string | null>(null);
         bg-cover
         bg-center
         bg-no-repeat
-   
         rounded-[36px]
         bg-[position:50%_20%]
         max-lg:rounded-[27px]
@@ -149,7 +148,7 @@ const [hoveredTab, setHoveredTab] = useState<string | null>(null);
         max-lg:bg-center
         
         w-full
-     
+      
      
       "
     >

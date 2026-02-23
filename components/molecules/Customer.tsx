@@ -90,7 +90,7 @@ export default function Customer() {
               </div>
             </div>
             <div className="w-full flex flex-col gap-[63px]">
-              <h2 className="text-[48px] max-lg:text-[32px] max-md:text-[20px] font-medium text-[#101010] text-start">
+              <h2 className="text-[32px] max-lg:text-[24px] max-md:text-[20px] font-medium text-[#101010] text-start">
                 Why You’ll Love Using Our App
               </h2>
 
@@ -125,8 +125,10 @@ export default function Customer() {
                   <div className="flex-shrink-0 w-[90vw] max-w-md">
                     <div className="flex flex-col gap-[13px]">
                       <p className="text-[#3A3A3A] text-[16px] font-medium text-start leading-[200%]">
-                        Enjoy a clear and simple booking experience. <br />{" "}
-                        Discover services, choose your professional, <br />
+                        Enjoy a clear and simple booking experience.{" "}
+                        <br className="block max-lg:hidden" /> Discover
+                        services, choose your professional,{" "}
+                        <br className="block max-lg:hidden" />
                         and schedule instantly.
                       </p>
                       <div className="flex flex-row mt-[40px] gap-[16px] items-center">
@@ -146,9 +148,11 @@ export default function Customer() {
                   <div className="flex-shrink-0 w-[90vw] max-w-md">
                     <div className="flex flex-col gap-[13px]">
                       <p className="text-[#3A3A3A] text-[16px] font-medium text-start leading-[200%]">
-                        We connect you with reliable professionals, <br />{" "}
-                        offering clear details and confidence at every <br />{" "}
-                        step of your booking journey.
+                        We connect you with reliable professionals,{" "}
+                        <br className="block max-lg:hidden" /> offering clear
+                        details and confidence at every{" "}
+                        <br className="block max-lg:hidden" /> step of your
+                        booking journey.
                       </p>
                       <div className="flex flex-row mt-[40px] gap-[16px] items-center">
                         <div className="bg-[#081F2F] rounded-[25.5px] w-[41px] h-[41px] flex justify-center items-center">

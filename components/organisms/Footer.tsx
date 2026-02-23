@@ -137,22 +137,22 @@ export default function Footer() {
         >
           <div className="flex flex-row gap-37 max-lg:flex-col max-lg:gap-13.75">
             <div className="flex flex-col gap-12">
-              {/* Update Image - Appears first */}
-              <motion.div variants={imageVariants}>
-                <div className="w-92.25 max-md:w-fit">
-                  <Image src={update} alt="nation wide logo" className="" />
-                </div>
-              </motion.div>
+              <div className="flex flex-col">
+                {" "}
+                <motion.div variants={imageVariants}>
+                  <div className="w-92.25 max-md:w-fit">
+                    <Image src={update} alt="nation wide logo" className="" />
+                  </div>
+                </motion.div>
+                {/* Book Fast. Book smart. Book your way. - Appears second */}
+                <motion.div
+                  className="text-[#FFFFFFB2] text-[14px] max-md:text-[11px] font-normal mt-4 max-md:mt-0 flex justify-start max-md:justify-center items-center"
+                  variants={fadeInVariants}
+                >
+                  Book Fast. Book smart. Book your way.
+                </motion.div>
+              </div>
 
-              {/* Book Fast. Book smart. Book your way. - Appears second */}
-              <motion.div
-                className="text-[#FFFFFFB2] text-[14px] max-md:text-[11px] font-normal mt-4 max-md:mt-0 flex justify-start max-md:justify-center items-center"
-                variants={fadeInVariants}
-              >
-                Book Fast. Book smart. Book your way.
-              </motion.div>
-
-              {/* Follow Us Section - Appears third */}
               <div className="flex flex-col gap-6.5 max-md:justify-center max-md:items-center">
                 <motion.div variants={fadeInVariants}>Follow Us:</motion.div>
                 <motion.div

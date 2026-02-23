@@ -390,7 +390,7 @@ export default function Business() {
 
   return (
     <div id="business">
-      <div className="flex flex-row gap-[137px] mt-[105px] max-lg:flex-col">
+      <div className="flex flex-row gap-[137px] mt-[105px] max-lg:flex-col  items-center">
         <div className=" flex flex-col gap-[2.5rem] w-full">
           {/* Animated Blue Button */}
           <motion.div
@@ -432,7 +432,7 @@ export default function Business() {
 
           {/* Animated Heading - Words appear one by one */}
           <motion.div
-            className="font-medium text-[48px] max-lg:text-[36px] max-md:text-[20px]"
+            className="font-medium text-[32px] max-lg:text-[24px] max-md:text-[20px]"
             variants={headingContainerVariants}
             initial="hidden"
             whileInView="visible"
@@ -538,7 +538,7 @@ export default function Business() {
         >
           <ShimmeringText
             text="BOOKING MADE EASY"
-            duration={2.5}
+            duration={0.5}
             wave={true}
             color="#FFFFFF"
             shimmeringColor="#ADF7FF"
@@ -551,7 +551,7 @@ export default function Business() {
         <div className="flex flex-row justify-between">
           <div className="flex flex-col  gap-[3.25rem] max-lg:gap-3.75">
             <motion.div
-              className="text-[55px] max-lg:text-[36px] max-md:text-[19px] text-[#101010] font-medium"
+              className="text-[40px] max-lg:text-[32px] max-md:text-[22px] text-[#101010] font-medium"
               variants={headingContainerVariants}
               initial="hidden"
               whileInView="visible"
