@@ -180,7 +180,7 @@ export default function Hero() {
       </video>
       <div className=" mb-7 max-lg:mb-0 ">
         <div className=" max-lg:w-full max-lg:px-0 flex flex-col gap-[4.125rem] max-lg:gap-0 justify-end">
-          <div className="ml-27.75 mr-[52px] max-lg:ml-0 max-lg:mr-0 max-lg:px-[1.4375rem]">
+          <div className="ml-27.75 mr-13 max-lg:ml-0 max-lg:mr-0 max-lg:px-[1.4375rem]">
             {/* <Image
               src={update}
               alt="nation wide logo"
