@@ -125,7 +125,7 @@ export default function Customer() {
               </motion.div>
             </motion.div>
             <div className="w-full flex flex-col gap-[63px]">
-              <h2 className="text-[32px] max-lg:text-[24px] max-md:text-[20px] font-medium text-[#101010] text-start">
+              <h2 className="text-[32px] max-lg:text-[24px] max-md:text-[17px] font-medium text-[#101010] text-start">
                 Why You’ll Love Using Our App
               </h2>
 
@@ -138,7 +138,7 @@ export default function Customer() {
                   {/* Card 1 */}
                   <div className="flex-shrink-0 w-[90vw] max-w-md">
                     <div className="flex flex-col gap-[13px]">
-                      <p className="text-[#3A3A3A] text-[16px] font-medium text-start leading-[200%]">
+                      <p className="text-[#3A3A3A] text-[16px] max-md:text-[12px] font-medium text-start leading-[200%]">
                         We simplify choosing the right time, displaying
                         available slots instantly. Find the perfect moment and
                         book without any hassle.
@@ -148,10 +148,10 @@ export default function Customer() {
                           <Image
                             src={logo}
                             alt={"nation wide logo"}
-                            className=""
+                            className=" max-md:w-[8px] max-md:h-[11px]"
                           />
                         </div>
-                        <div className="text-[18px] text-[#1E1E1E] font-medium text-[#1E1E1E] leading-[200%]">
+                        <div className="text-[18px] text-[#1E1E1E] max-md:text-[13px] font-medium text-[#1E1E1E] leading-[200%]">
                           Find Your Perfect Time!
                         </div>
                       </div>
@@ -159,7 +159,7 @@ export default function Customer() {
                   </div>
                   <div className="flex-shrink-0 w-[90vw] max-w-md">
                     <div className="flex flex-col gap-[13px]">
-                      <p className="text-[#3A3A3A] text-[16px] font-medium text-start leading-[200%]">
+                      <p className="text-[#3A3A3A] text-[16px] max-md:text-[12px] font-medium text-start leading-[200%]">
                         Enjoy a clear and simple booking experience.{" "}
                         <br className="block max-lg:hidden" /> Discover
                         services, choose your professional,{" "}
@@ -171,10 +171,10 @@ export default function Customer() {
                           <Image
                             src={logo}
                             alt={"nation wide logo"}
-                            className=""
+                            className=" max-md:w-[8px] max-md:h-[11px]"
                           />
                         </div>
-                        <div className="text-[18px] text-[#1E1E1E] font-medium text-[#1E1E1E] leading-[200%]">
+                        <div className="text-[18px] max-md:text-[13px] text-[#1E1E1E] font-medium text-[#1E1E1E] leading-[200%]">
                           Pick. Tap. Done.
                         </div>
                       </div>
@@ -182,7 +182,7 @@ export default function Customer() {
                   </div>
                   <div className="flex-shrink-0 w-[90vw] max-w-md">
                     <div className="flex flex-col gap-[13px]">
-                      <p className="text-[#3A3A3A] text-[16px] font-medium text-start leading-[200%]">
+                      <p className="text-[#3A3A3A] text-[16px] max-md:text-[12px] font-medium text-start leading-[200%]">
                         We connect you with reliable professionals,{" "}
                         <br className="block max-lg:hidden" /> offering clear
                         details and confidence at every{" "}
@@ -194,10 +194,10 @@ export default function Customer() {
                           <Image
                             src={logo}
                             alt={"nation wide logo"}
-                            className=""
+                            className=" max-md:w-[8px] max-md:h-[11px]"
                           />
                         </div>
-                        <div className="text-[18px] text-[#1E1E1E] font-medium text-[#1E1E1E] leading-[200%]">
+                        <div className="text-[18px] text-[#1E1E1E] max-md:text-[13px] font-medium text-[#1E1E1E] leading-[200%]">
                           Match With the Best
                         </div>
                       </div>

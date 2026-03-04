@@ -179,7 +179,7 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
       <div className=" mb-7 max-lg:mb-0 ">
-        <div className=" max-lg:w-full max-lg:px-0 flex flex-col gap-[4.125rem] max-lg:gap-0 justify-end">
+        <div className=" max-lg:w-full max-lg:px-0 flex flex-col gap-[1.125rem] max-lg:gap-0 justify-end">
           <div className="ml-27.75 mr-13 max-lg:ml-0 max-lg:mr-0 max-lg:px-[1.4375rem]">
             {/* <Image
               src={update}
@@ -198,16 +198,16 @@ export default function Hero() {
               <Image
                 src={update}
                 alt="The Update logo"
-                className="mt-[228px] max-lg:mt-[207px] w-auto h-auto"
+                className="mt-[190px] max-lg:mt-[178px] w-auto h-auto"
                 priority // ← important for hero!
               />
             </motion.div>
           </div>
 
-          <div className="overflow-x-auto  pb-2 mx-[65px] max-lg:mx-0 min-h-[280px] flex items-end max-lg:pl-[1.4375rem]">
+          <div className="overflow-x-auto  pb-2 mx-[65px] max-lg:mx-0 min-h-[235px] flex items-end max-lg:pl-[1.4375rem]">
             <ScrollArea className="w-full ">
               <motion.div
-                className="flex items-end justify-center gap-4 relative min-h-[280px]"
+                className="flex items-end justify-center gap-4 relative min-h-[220px]"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible" // starts automatically when component mounts
@@ -333,7 +333,7 @@ export default function Hero() {
               <ScrollBar orientation="horizontal" className="hidden" />
             </ScrollArea>
           </div>
-          <div className="flex justify-start max-md:justify-start ml-[42px] max-lg:ml-[0px] mb-[39px] max-lg:px-[1.4375rem]">
+          <div className="flex justify-start max-md:justify-start ml-[42px] max-lg:ml-[0px] mb-[0px] max-md:mb-[18px] max-lg:px-[1.4375rem]">
             <Image
               src={flower}
               alt="nation wide logo"

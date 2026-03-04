@@ -59,7 +59,7 @@ export default function Explore() {
 
   return (
     <div id="explore">
-      <div className="flex flex-col gap-[5.625rem] max-md:gap-[51px] mt-[6.5625rem]">
+      <div className="flex flex-col gap-[5.625rem] max-md:gap-[51px] mt-[6.5625rem] max-md:mt-[79px]">
         <div className="flex flex-col gap-[2.5rem]">
           <motion.div
             className="bg-[#18BCCA] py-[2px] pl-[37px] pr-[42.2px] rounded-[7px] w-fit"

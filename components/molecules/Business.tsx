@@ -438,7 +438,7 @@ export default function Business() {
 
           {/* Animated Heading - Words appear one by one */}
           <motion.div
-            className="font-medium text-[32px] max-lg:text-[24px] max-md:text-[20px]"
+            className="font-medium text-[32px] max-lg:text-[24px] max-md:text-[17px]"
             variants={headingContainerVariants}
             initial="hidden"
             whileInView="visible"
@@ -544,7 +544,7 @@ export default function Business() {
         >
           <ShimmeringText
             text="BOOKING MADE EASY"
-            duration={0.3}
+            duration={0.8}
             wave={true}
             color="#FFFFFF"
             shimmeringColor="#ADF7FF"

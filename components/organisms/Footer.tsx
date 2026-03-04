@@ -129,7 +129,7 @@ export default function Footer() {
     <>
       <div>
         <motion.div
-          className="bg-[#222222] mt-26.25 mb-11.25 text-[#FFFFFF] font-sans mx-[45px] max-lg:mx-[20px] max-lg:px-[30px] rounded-[44px] max-lg:py-9 p-[61px]"
+          className="bg-[#222222] mt-26.25 mb-11.25 max-md:mb-[5.71px] text-[#FFFFFF] font-sans mx-[45px] max-lg:mx-[20px] max-lg:px-[30px] rounded-[44px] max-lg:py-9 p-[61px]"
           variants={footerContainerVariants}
           initial="hidden"
           whileInView="visible"
@@ -154,7 +154,12 @@ export default function Footer() {
               </div>
 
               <div className="flex flex-col gap-6.5 max-md:justify-center max-md:items-center">
-                <motion.div variants={fadeInVariants}>Follow Us:</motion.div>
+                <motion.div
+                  variants={fadeInVariants}
+                  className="max-md:text-[14px]"
+                >
+                  Follow Us:
+                </motion.div>
                 <motion.div
                   className="flex flex-row gap-7.25"
                   variants={fadeInVariants}
@@ -173,12 +178,12 @@ export default function Footer() {
                 variants={fadeInVariants}
               >
                 <div
-                  className={`text-[#FFFFFF] text-[18px] font-medium max-md:text-center ${montserrat.className}`}
+                  className={`text-[#FFFFFF] text-[14px] font-medium max-md:text-center ${montserrat.className}`}
                 >
                   Quick Links
                 </div>
                 <ul
-                  className={`flex flex-col gap-3 text-[#FFFFFFB2] text-[16px] font-normal max-md:justify-center max-md:items-center ${montserrat.className}`}
+                  className={`flex flex-col gap-3 text-[#FFFFFFB2] text-[12px] font-normal max-md:justify-center max-md:items-center ${montserrat.className}`}
                 >
                   <li>About</li>
                   <li>Contact</li>
@@ -193,12 +198,12 @@ export default function Footer() {
                 variants={fadeInVariants}
               >
                 <div
-                  className={`text-[#FFFFFF] text-[18px] font-medium max-md:text-center ${montserrat.className}`}
+                  className={`text-[#FFFFFF] text-[14px] font-medium max-md:text-center ${montserrat.className}`}
                 >
                   More Info
                 </div>
                 <ul
-                  className={`flex flex-col gap-3 text-[#FFFFFFB2] text-[16px] font-normal max-md:justify-center max-md:items-center ${montserrat.className}`}
+                  className={`flex flex-col gap-3 text-[#FFFFFFB2] text-[12px] font-normal max-md:justify-center max-md:items-center ${montserrat.className}`}
                 >
                   <li>News</li>
                   <li>New features</li>
