@@ -6,6 +6,8 @@ import Image from "next/image";
 import update from "@/public/images/updateblue.svg";
 import update2 from "@/public/images/updategreen.svg";
 import logo from "@/public/logo2.svg";
+import { motion } from "framer-motion";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Customer() {
@@ -64,31 +66,64 @@ export default function Customer() {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
-
+  const buttonChildVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4 },
+    },
+  };
+  const buttonContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
   return (
     <div id="customer">
       <section ref={sectionRef} className=" relative">
         <div className="py-16 pt-[105px]">
           <div className=" flex flex-col gap-[63px] text-center">
-            <div className="bg-[#18BCCA] py-[2px] pl-[30px] pr-[34px] rounded-[7px] w-fit">
-              <div className="flex justify-end relative ">
+            <motion.div
+              variants={buttonContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              className="bg-[#18BCCA] py-[2px] pl-[30px] pr-[34px] rounded-[7px] w-fit"
+            >
+              <motion.div
+                variants={buttonChildVariants}
+                className="flex justify-end relative "
+              >
                 <Image
                   src={update}
                   alt="nation wide logo"
                   className="max-lg:w-[15px] max-lg:h-[20px] absolute top-[1px] right-[-19px] "
                 />
-              </div>
-              <div className="text-[#FFFFFF] text-[14px] mt-[7px] mb-[9px] font-firs font-bold ">
+              </motion.div>
+              <motion.div
+                variants={buttonChildVariants}
+                className="text-[#FFFFFF] text-[14px] mt-[7px] mb-[9px] font-firs font-bold "
+              >
                 For Customers
-              </div>
-              <div className="flex justify-start relative">
+              </motion.div>
+              <motion.div
+                className="flex justify-start relative"
+                variants={buttonChildVariants}
+              >
                 <Image
                   src={update2}
                   alt="nation wide logo"
                   className="max-lg:w-[15px] max-lg:h-[20px] absolute bottom-[1px] left-[-14px]"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             <div className="w-full flex flex-col gap-[63px]">
               <h2 className="text-[32px] max-lg:text-[24px] max-md:text-[20px] font-medium text-[#101010] text-start">
                 Why You’ll Love Using Our App
@@ -116,7 +151,7 @@ export default function Customer() {
                             className=""
                           />
                         </div>
-                        <div className="text-[18px] font-medium text-[#1E1E1E]">
+                        <div className="text-[18px] text-[#1E1E1E] font-medium text-[#1E1E1E] leading-[200%]">
                           Find Your Perfect Time!
                         </div>
                       </div>
@@ -139,7 +174,7 @@ export default function Customer() {
                             className=""
                           />
                         </div>
-                        <div className="text-[18px] font-medium text-[#1E1E1E]">
+                        <div className="text-[18px] text-[#1E1E1E] font-medium text-[#1E1E1E] leading-[200%]">
                           Pick. Tap. Done.
                         </div>
                       </div>
@@ -162,7 +197,7 @@ export default function Customer() {
                             className=""
                           />
                         </div>
-                        <div className="text-[18px] font-medium text-[#1E1E1E]">
+                        <div className="text-[18px] text-[#1E1E1E] font-medium text-[#1E1E1E] leading-[200%]">
                           Match With the Best
                         </div>
                       </div>

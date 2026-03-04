@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
@@ -118,6 +122,7 @@
     font-family: "Garet", sans-serif;
   }
 }
+
 .font-poppins {
   font-family: var(--font-poppins);
 }

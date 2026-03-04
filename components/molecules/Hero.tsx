@@ -5,6 +5,7 @@ import hero from "@/public/images/update-hero2.jpg";
 import Image from "next/image";
 import update from "@/public/images/the-updatet.png";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+// import heroVideo from "@/public/video/hero.mp4";
 import flower from "@/public/images/flower.svg";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
@@ -135,24 +136,49 @@ export default function Hero() {
   return (
     <div
       id="home"
-      style={{ backgroundImage: `url(${hero.src})` }}
+      // style={{ backgroundImage: `url(${hero.src})` }}
+      // className="
+      //   relative
+      //   bg-cover
+      //   bg-center
+      //   bg-no-repeat
+      //   rounded-[36px]
+      //   bg-[position:50%_20%]
+      //   max-lg:rounded-[27px]
+      //   max-lg:bg-cover
+      //   max-lg:bg-center
+
+      //   w-full
+
+      // "
       className="
         relative
-        bg-cover
-        bg-center
-        bg-no-repeat
         rounded-[36px]
-        bg-[position:50%_20%]
+        overflow-hidden           // ← important: clips the video
         max-lg:rounded-[27px]
-        max-lg:bg-cover
-        max-lg:bg-center
-        
         w-full
-      
-     
+                 
+        bg-black/40               // ← optional dark overlay if video is too bright
       "
     >
-      <div className=" mb-[7.5625rem] ">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="
+          absolute inset-0
+          w-full h-full
+          object-cover              
+          -z-10                     
+        "
+        // Optional: poster image shown before video loads
+        // poster={hero.src}
+      >
+        <source src="/video/hero.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className=" mb-[28px] max-lg:mb-[0px] ">
         <div className=" max-lg:w-full max-lg:px-[0rem] flex flex-col gap-[4.125rem] max-lg:gap-0 justify-end">
           <div className="ml-[111px] mr-[52px] max-lg:ml-0 max-lg:mr-0 max-lg:px-[1.4375rem]">
             {/* <Image
@@ -162,7 +188,9 @@ export default function Hero() {
             /> */}
             <motion.div
               initial="hidden"
-              animate="visible"
+              // animate="visible"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
               variants={imageRevealVariants}
               // Optional: delay if you want it to appear after background or other elements
               // transition={{ delay: 0.4 }}
@@ -170,7 +198,7 @@ export default function Hero() {
               <Image
                 src={update}
                 alt="The Update logo"
-                className="mt-[289px] w-auto h-auto" // keep natural size
+                className="mt-[228px] max-lg:mt-[207px] w-auto h-auto"
                 priority // ← important for hero!
               />
             </motion.div>
@@ -305,7 +333,7 @@ export default function Hero() {
               <ScrollBar orientation="horizontal" className="hidden" />
             </ScrollArea>
           </div>
-          <div className="flex justify-end max-md:justify-start mr-[42px] max-lg:mr-0 mb-[39px] max-lg:px-[1.4375rem]">
+          <div className="flex justify-start max-md:justify-start ml-[42px] max-lg:ml-[0px] mb-[39px] max-lg:px-[1.4375rem]">
             <Image
               src={flower}
               alt="nation wide logo"

@@ -78,7 +78,7 @@ export default function RootLayout({
       <body
         className={`antialiased ${archivoBlack.variable}  ${poppins.variable}`}
       >
-        <div className="m-auto mx-11.25 max-md:mx-5 max-lg:px-0 ">
+        <div className="m-auto mx-11.25 max-md:mx-[0.9375rem] max-lg:px-0 ">
           <Navbar />
           {children}
         </div>

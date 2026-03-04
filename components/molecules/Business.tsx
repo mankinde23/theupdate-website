@@ -297,13 +297,12 @@ const featureItemVariants: Variants = {
   },
 };
 // Variants for the blue button animation
-const buttonContainerVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
+const buttonContainerVariants = {
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    scale: 1,
     transition: {
-      duration: 0.3,
+      duration: 0.5,
       when: "beforeChildren",
       staggerChildren: 0.2,
     },
@@ -318,7 +317,14 @@ const buttonTextVariants: Variants = {
     transition: { duration: 0.4 },
   },
 };
-
+const buttonChildVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.4 },
+  },
+};
 const buttonIconVariants: Variants = {
   hidden: { opacity: 0, scale: 0 },
   visible: {
@@ -390,7 +396,7 @@ export default function Business() {
 
   return (
     <div id="business">
-      <div className="flex flex-row gap-[137px] mt-[105px] max-lg:flex-col  items-center">
+      <div className="flex flex-row gap-[137px] mt-[105px] max-xl:flex-col  items-center">
         <div className=" flex flex-col gap-[2.5rem] w-full">
           {/* Animated Blue Button */}
           <motion.div
@@ -402,7 +408,7 @@ export default function Business() {
           >
             <motion.div
               className="flex justify-end relative"
-              variants={buttonIconVariants}
+              variants={buttonChildVariants}
             >
               <Image
                 src={update}
@@ -413,14 +419,14 @@ export default function Business() {
 
             <motion.div
               className="text-[#FFFFFF] text-[14px] mt-[7px] mb-[9px] font-firs font-bold"
-              variants={buttonTextVariants}
+              variants={buttonChildVariants}
             >
               For Businesses
             </motion.div>
 
             <motion.div
               className="flex justify-start relative"
-              variants={buttonIconVariants}
+              variants={buttonChildVariants}
             >
               <Image
                 src={update2}
@@ -469,10 +475,10 @@ export default function Business() {
                 />
               </div>
               <div className="flex flex-col gap-[4px]">
-                <div className="text-[20px] max-md:text-[13px] font-medium text-[#1E1E1E]">
+                <div className="text-[20px] max-md:text-[13px] font-medium text-[#1E1E1E] leading-[200%]">
                   Track Every Dollar Earned
                 </div>
-                <div className="text-[#3A3A3A] text-[16px] font-normal max-md:text-[12px]">
+                <div className="text-[#3A3A3A] text-[16px] font-normal max-md:text-[12px] leading-[200%]">
                   See exactly where your business revenue comes from.
                 </div>
               </div>
@@ -489,10 +495,10 @@ export default function Business() {
                 />
               </div>
               <div className="flex flex-col gap-[4px]">
-                <div className="text-[20px] max-md:text-[13px] font-medium text-[#1E1E1E]">
+                <div className="text-[20px] max-md:text-[13px] font-medium text-[#1E1E1E] leading-[200%]">
                   Optimize Team Performance
                 </div>
-                <div className="text-[#3A3A3A] text-[16px] font-normal max-md:text-[12px]">
+                <div className="text-[#3A3A3A] text-[16px] font-normal max-md:text-[12px] leading-[200%]">
                   Track staff efficiency to maximize daily output.
                 </div>
               </div>
@@ -509,10 +515,10 @@ export default function Business() {
                 />
               </div>
               <div className="flex flex-col gap-[4px]">
-                <div className="text-[20px] max-md:text-[13px] font-medium text-[#1E1E1E]">
+                <div className="text-[20px] max-md:text-[13px] font-medium text-[#1E1E1E] leading-[200%]">
                   Boost Every Sale
                 </div>
-                <div className="text-[#3A3A3A] text-[16px] font-normal max-md:text-[12px]">
+                <div className="text-[#3A3A3A] text-[16px] font-normal max-md:text-[12px] leading-[200%]">
                   Know your typical sale value to increase earnings.
                 </div>
               </div>
@@ -528,7 +534,7 @@ export default function Business() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <Image src={app3} alt="" className="h-[]" />
+          <Image src={app3} alt="" className="" />
         </motion.div>
       </div>
       <div className="mt-[105px] max-lg:mt-[79px]">
@@ -538,7 +544,7 @@ export default function Business() {
         >
           <ShimmeringText
             text="BOOKING MADE EASY"
-            duration={0.5}
+            duration={0.3}
             wave={true}
             color="#FFFFFF"
             shimmeringColor="#ADF7FF"
@@ -598,11 +604,7 @@ export default function Business() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <Image
-              src={download}
-              alt=""
-              className="max-md:w-[224px] max-md:h-[348px]"
-            />
+            <Image src={download} alt="" className="max-md:w-56 max-md:h-87" />
           </motion.div>
         </div>
 
@@ -617,7 +619,7 @@ export default function Business() {
           <Image
             src={download}
             alt=""
-            className="max-md:w-[224px] max-md:h-[348px] absolute max-lg:block left-[40px]"
+            className="max-md:w-[224px] max-md:h-[348px] absolute max-lg:block left-[112px]"
           />
         </motion.div>
       </div>

@@ -61,12 +61,12 @@ export default function Explore() {
     <div id="explore">
       <div className="flex flex-col gap-[5.625rem] max-md:gap-[51px] mt-[6.5625rem]">
         <div className="flex flex-col gap-[2.5rem]">
-          {/* Button with animation */}
           <motion.div
             className="bg-[#18BCCA] py-[2px] pl-[37px] pr-[42.2px] rounded-[7px] w-fit"
             variants={buttonContainerVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
           >
             {/* First icon */}
             <motion.div
@@ -111,7 +111,7 @@ export default function Explore() {
                     custom={index}
                     variants={textVariants}
                     initial="hidden"
-                    animate="visible"
+                    whileInView="visible"
                     className="mr-2"
                   >
                     {word}
@@ -159,7 +159,8 @@ export default function Explore() {
           <motion.div
             variants={imageVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.4 }}
           >
             <Image src={app2} alt="App preview 2" className="w-full h-auto" />

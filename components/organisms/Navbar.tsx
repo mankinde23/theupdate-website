@@ -25,17 +25,19 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50  mt-19.5 max-lg:mt-11.75  font-sans">
-      <div className=" mx-[85px] max-lg:mx-10.25  flex items-center justify-between px-[2.38rem]  max-lg:px-6.75 py-[17px] bg-[#FFFFFF] rounded-3xl max-lg:rounded-[15px] ">
+      <div className=" mx-[85px] max-lg:mx-[37px]  flex items-center justify-between px-[2.38rem]  max-lg:px-[0px] max-lg:py-[0px] py-[17px]  rounded-3xl max-lg:rounded-[15px] ">
         <Link to="/">
-          <Image
-            src={logo}
-            alt={"nation wide logo"}
-            className="max-lg:w-[15px] max-lg:h-[20px]"
-          />
+          <div className="bg-[#FFFFFF] py-[15px] px-[37px] max-lg:py-[1.0625rem] max-lg:pl-[1.6875rem] max-lg:pr-[1.8125rem] rounded-[15px] shadow-[0_31px_67px_0_#0000001A,0_122px_122px_0_#00000017,0_275px_165px_0_#0000000D,0_488px_195px_0_#00000003,0_763px_214px_0_#00000000]">
+            <Image
+              src={logo}
+              alt={"nation wide logo"}
+              className="max-lg:w-[15px] max-lg:h-[20px]"
+            />
+          </div>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="  max-lg:hidden flex gap-[21px] items-center">
+        <div className="  max-lg:hidden flex gap-[21px] items-center bg-[#FFFFFF] rounded-[1rem] py-[15px] px-[2.125rem]">
           {navItems.map((item) => (
             // <Link
             //   key={item.to}
@@ -57,8 +59,8 @@ export default function Navbar() {
               offset={-140} // ← tune this number (negative = scroll more)
               duration={500}
               spy={true}
-              activeClass="text-[#18BCCA] text-[14px] font-semibold font-poppins after:bg-yellow-500 bg-[#E7F7F8] rounded-[7px] py-[3.5px] px-[14px] text-center flex justify-center items-center h-fit"
-              className="cursor-pointer text-[#1E1E1E] font-poppins hover:text-white transition relative text-[14px] font-medium flex justify-center items-center h-fit px-[14px]
+              activeClass="text-[#18BCCA] text-[14px] font-semibold font-poppins after:bg-yellow-500 bg-[#E7F7F8] rounded-[7px] py-[3.5px] px-[31px] text-center flex justify-center items-center h-fit"
+              className="cursor-pointer text-[#1E1E1E] font-poppins hover:text-[#E7F7F8] transition relative text-[14px] font-medium flex justify-center items-center h-fit px-[31px]
              after:content-[''] after:block  after:text-[#18BCCA] after:text-[14px] after:rounded-[7px]  after:mx-auto after:bg-transparent"
             >
               {item.name}
@@ -76,14 +78,17 @@ export default function Navbar() {
           ) : (
             <Menu size={18} color="#18BCCA" className="w-5.75" />
           )} */}
-          {isOpen ? (
-            <Menu size={18} color="#18BCCA" className="w-5.75" />
-          ) : (
-            <Menu size={18} color="#18BCCA" className="w-5.75" />
-          )}
+          <div className="bg-[#FFFFFF] py-[1.0625rem] px-[20.5px]  rounded-[15px] shadow-[0_31px_67px_0_#0000001A,0_122px_122px_0_#00000017,0_275px_165px_0_#0000000D,0_488px_195px_0_#00000003,0_763px_214px_0_#00000000]">
+            {" "}
+            {isOpen ? (
+              <Menu size={18} color="#18BCCA" className="w-5.75" />
+            ) : (
+              <Menu size={18} color="#18BCCA" className="w-5.75" />
+            )}
+          </div>
         </button>
-        <Button className="bg-[#1ABAC9] rounded-[0.625rem] px-[1.2188rem] py-[0.4688rem] text-[#FFFFFF] font-semibold text-[13px] block  max-lg:hidden ">
-          Download App
+        <Button className="bg-[#1ABAC9] rounded-[0.625rem] px-[1.2188rem] py-[15px] h-full text-[#FFFFFF] font-semibold text-[13px] block  max-lg:hidden ">
+          <div className=""> Download App</div>
         </Button>
       </div>
 
