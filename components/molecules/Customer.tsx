@@ -124,7 +124,7 @@ export default function Customer() {
                 />
               </motion.div>
             </motion.div>
-            <div className="w-full flex flex-col gap-[63px]">
+            <div className="w-full flex flex-col gap-[63px] max-lg:gap-[27px]">
               <h2 className="text-[32px] max-lg:text-[24px] max-md:text-[17px] font-medium text-[#101010] text-start">
                 Why You’ll Love Using Our App
               </h2>
