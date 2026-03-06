@@ -135,7 +135,7 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <div className="flex flex-row !justify-between gap-[0px]  max-lg:flex-col max-lg:gap-13.75">
+          <div className="flex flex-row !justify-between gap-[0px]  max-md:flex-col max-md:gap-13.75">
             <div className="flex flex-col gap-12">
               <div className="flex flex-col">
                 {" "}
@@ -171,7 +171,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex flex-row gap-[98px] max-lg:gap-0 max-md:justify-between  max-md:flex-col max-md:justify-center max-md:items-center">
+            <div className="flex flex-row gap-[98px] max-md:gap-0 max-md:justify-between  max-md:flex-col max-md:justify-center max-md:items-center">
               {/* Quick Links - Appears fourth */}
               <motion.div
                 className="flex gap-4 flex-col"

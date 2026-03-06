@@ -37,7 +37,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="  max-lg:hidden flex gap-[21px] items-center bg-[#FFFFFF] rounded-[1rem] py-[15px] px-[2.125rem]">
+        <div className="  max-lg:hidden flex gap-[21px] items-center bg-[#FFFFFF] rounded-[1rem] py-[15px] px-[2.125rem] shadow-[0px_31px_67px_0px_#0000001A,0px_122px_122px_0px_#00000017,0px_275px_165px_0px_#0000000D,0px_488px_195px_0px_#00000003,0px_763px_214px_0px_#00000000]">
           {navItems.map((item) => (
             // <Link
             //   key={item.to}
@@ -87,7 +87,7 @@ export default function Navbar() {
             )}
           </div>
         </button>
-        <Button className="bg-[#1ABAC9] rounded-[0.625rem] px-[1.2188rem] py-[15px] h-full text-[#FFFFFF] font-semibold text-[13px] block  max-lg:hidden ">
+        <Button className="bg-[#1ABAC9] rounded-[0.625rem] px-[1.2188rem] py-[15px] h-full text-[#FFFFFF] font-semibold text-[13px] block  max-lg:hidden shadow-[0px_31px_67px_0px_#0000001A,0px_122px_122px_0px_#00000017,0px_275px_165px_0px_#0000000D,0px_488px_195px_0px_#00000003,0px_763px_214px_0px_#00000000]">
           <div className=""> Download App</div>
         </Button>
       </div>
