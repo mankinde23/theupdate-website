@@ -10,8 +10,10 @@ import logo from "@/public//logo.svg";
 import { Dot } from "@phosphor-icons/react/dist/ssr/Dot";
 import { Button } from "../ui/button";
 import flower from "@/public/images/flower3.png";
-import appstore from "@/public/images/appstore.png";
+import appstore from "@/public/images/apple.svg";
 import playstore from "@/public/images/playstore.png";
+import appstoren from "@/public/images/appsstoreee.svg";
+import playstoren from "@/public/images/google.svg";
 const navItems = [
   { name: "Home", to: "home" },
   { name: "Features", to: "customer" },
@@ -37,38 +39,68 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="  max-lg:hidden flex gap-[21px] items-center bg-[#FFFFFF] rounded-[1rem] py-[15px] px-[2.125rem] shadow-[0px_31px_67px_0px_#0000001A,0px_122px_122px_0px_#00000017,0px_275px_165px_0px_#0000000D,0px_488px_195px_0px_#00000003,0px_763px_214px_0px_#00000000]">
-          {navItems.map((item) => (
-            // <Link
-            //   key={item.to}
-            //   to={item.to}
-            //   smooth={true}
-            //   offset={-190}
-            //   duration={500}
-            //   spy={true}
-            //   // activeClass=" text-white font-semibold relative   after:content-[''] after:block after:w-full after:h-[2px]  after:bg-yellow-500 after:rounded-full after:mt-1  "
-            //   // className="cursor-pointer text-gray-600 hover:text-blue-600 transition"
-            //   className="cursor-pointer text-gray-400 hover:text-white transition inline-block relative px-1 py-2"
-            // >
-            //   {item.name}
-            // </Link>
-            <Link
-              key={item.to}
-              to={item.to}
-              smooth={true}
-              offset={-140} // ← tune this number (negative = scroll more)
-              duration={500}
-              spy={true}
-              activeClass="text-[#18BCCA] text-[14px] font-semibold font-poppins after:bg-yellow-500 bg-[#E7F7F8] rounded-[7px] py-[3.5px] px-[31px] text-center flex justify-center items-center h-fit"
-              className="cursor-pointer text-[#1E1E1E] font-poppins hover:text-[#18BCCA] transition relative text-[14px] font-medium flex justify-center items-center h-fit px-[31px]
+        <div className="flex flex-row">
+          <div className="  max-lg:hidden flex gap-[21px] items-center bg-[#FFFFFF] rounded-[1rem] py-[15px] px-[2.125rem] shadow-[0px_31px_67px_0px_#0000001A,0px_122px_122px_0px_#00000017,0px_275px_165px_0px_#0000000D,0px_488px_195px_0px_#00000003,0px_763px_214px_0px_#00000000]">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                smooth={true}
+                offset={-140}
+                duration={500}
+                spy={true}
+                activeClass="text-[#18BCCA] text-[14px] font-semibold font-poppins after:bg-yellow-500 bg-[#E7F7F8] rounded-[7px] py-[3.5px] px-[31px] text-center flex justify-center items-center h-fit"
+                className="cursor-pointer text-[#1E1E1E] font-poppins hover:text-[#18BCCA] transition relative text-[14px] font-medium flex justify-center items-center h-fit px-[31px]
              after:content-[''] after:block  after:text-[#18BCCA] after:text-[14px] after:rounded-[7px]  after:mx-auto after:bg-transparent"
-            >
-              {item.name}
-            </Link>
-          ))}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center items-center flex-row gap-[1.25rem] max-lg:hidden">
+          <Image
+            src={appstoren}
+            alt="The Update logo"
+            className=" w-auto h-auto"
+            priority
+          />
+          {/* <div className="bg-[#FFFFFF] py-[0.8125rem] px-[1.125rem] rounded-[0.875rem] gap-[7.38px] flex flex-row items-center">
+              <div className=" ">
+                <Image
+                  src={appstore}
+                  alt="The Update logo"
+                  className=" w-auto h-auto"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col gap-[3.62px] ">
+                <div>Download on the</div>
+                <div> App Store</div>
+              </div>
+            </div>
+            <div className="bg-[#FFFFFF] py-[0.8125rem] px-[1.125rem] rounded-[0.875rem] gap-[7.38px] flex flex-row items-center">
+              <div className=" ">
+                <Image
+                  src={appstore}
+                  alt="The Update logo"
+                  className=" w-auto h-auto"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col gap-[3.62px] ">
+                <div>GET IT ON</div>
+                <div>Google Play</div>
+              </div>
+            </div> */}
+          <Image
+            src={playstoren}
+            alt="The Update logo"
+            className=" w-auto h-auto"
+            priority
+          />
         </div>
 
-        {/* Mobile Hamburger Button */}
         <button
           className=" max-lg:block hidden text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
@@ -87,9 +119,10 @@ export default function Navbar() {
             )}
           </div>
         </button>
-        <Button className="bg-[#1ABAC9] rounded-[0.625rem] px-[1.2188rem] py-[15px] h-full text-[#FFFFFF] font-semibold text-[13px] block  max-lg:hidden shadow-[0px_31px_67px_0px_#0000001A,0px_122px_122px_0px_#00000017,0px_275px_165px_0px_#0000000D,0px_488px_195px_0px_#00000003,0px_763px_214px_0px_#00000000]">
+
+        {/* <Button className="bg-[#1ABAC9] rounded-[0.625rem] px-[1.2188rem] py-[15px] h-full text-[#FFFFFF] font-semibold text-[13px] block  max-lg:hidden shadow-[0px_31px_67px_0px_#0000001A,0px_122px_122px_0px_#00000017,0px_275px_165px_0px_#0000000D,0px_488px_195px_0px_#00000003,0px_763px_214px_0px_#00000000]">
           <div className=""> Download App</div>
-        </Button>
+        </Button> */}
       </div>
 
       {/* Mobile Side Menu (Drawer) */}

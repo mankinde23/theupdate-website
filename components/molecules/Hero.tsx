@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import hero from "@/public/images/update-hero2.jpg";
 import Image from "next/image";
-import update from "@/public/images/the-updatet.png";
+import update from "@/public/images/theupdateh.png";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 // import heroVideo from "@/public/video/hero.mp4";
 import flower from "@/public/images/flower.svg";
@@ -14,6 +14,8 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
+import appstoren from "@/public/images/appsstoreee.svg";
+import playstoren from "@/public/images/google.svg";
 import { motion } from "framer-motion";
 const imageRevealVariants = {
   hidden: {
@@ -194,14 +196,33 @@ export default function Hero() {
               variants={imageRevealVariants}
               // Optional: delay if you want it to appear after background or other elements
               // transition={{ delay: 0.4 }}
+              className="flex flex-col gap-[28px] justify-center items-center"
             >
               <Image
                 src={update}
                 alt="The Update logo"
-                className="mt-[190px] max-lg:mt-[178px] w-auto h-auto"
+                className="mt-[190px] max-lg:mt-[178px] w-auto h-auto max-lg:w-[219px]"
                 priority // ← important for hero!
               />
+              <div className="text-[#FFFFFF] font-medium text-[1.5rem] max-lg:text-[13px] leading-[150%]">
+                Discover the incredible features of the app!{" "}
+              </div>
             </motion.div>
+            <div className="max-lg:flex justify-center items-center flex-row gap-[1.25rem] hidden mt-[34px]">
+              <Image
+                src={appstoren}
+                alt="The Update logo"
+                className=" w-auto h-auto"
+                priority
+              />
+
+              <Image
+                src={playstoren}
+                alt="The Update logo"
+                className=" w-auto h-auto"
+                priority
+              />
+            </div>
           </div>
 
           <div className="overflow-x-auto  pb-2 mx-[65px] max-lg:mx-0 min-h-[235px] flex items-end max-lg:pl-[1.4375rem]">
